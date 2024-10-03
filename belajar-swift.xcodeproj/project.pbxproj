@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22151BF82CAB9D2C00A6AFA5 /* belajar_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151BF72CAB9D2C00A6AFA5 /* belajar_swiftApp.swift */; };
+		22151BFA2CAB9D2C00A6AFA5 /* MyListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151BF92CAB9D2C00A6AFA5 /* MyListScreen.swift */; };
+		22151BFC2CAB9D2D00A6AFA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22151BFB2CAB9D2D00A6AFA5 /* Assets.xcassets */; };
+		22151BFF2CAB9D2D00A6AFA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22151BFE2CAB9D2D00A6AFA5 /* Preview Assets.xcassets */; };
+		22151C092CAB9D2E00A6AFA5 /* belajar_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151C082CAB9D2E00A6AFA5 /* belajar_swiftTests.swift */; };
+		22151C132CAB9D2E00A6AFA5 /* belajar_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151C122CAB9D2E00A6AFA5 /* belajar_swiftUITests.swift */; };
+		22151C152CAB9D2E00A6AFA5 /* belajar_swiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151C142CAB9D2E00A6AFA5 /* belajar_swiftUITestsLaunchTests.swift */; };
+		22151C292CABABD300A6AFA5 /* CardReminderStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151C282CABABD300A6AFA5 /* CardReminderStat.swift */; };
+		22151C2B2CABB47200A6AFA5 /* AddMyListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151C2A2CABB47200A6AFA5 /* AddMyListScreen.swift */; };
+		22151C2D2CABB6E300A6AFA5 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151C2C2CABB6E300A6AFA5 /* ColorPicker.swift */; };
+		22151C312CABD29000A6AFA5 /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151C302CABD29000A6AFA5 /* MyList.swift */; };
+		22151C342CABD37700A6AFA5 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22151C332CABD37700A6AFA5 /* PreviewContainer.swift */; };
+		2293A0042CAE310C00E8FD1B /* ExtColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293A0032CAE310C00E8FD1B /* ExtColor.swift */; };
+		2293A0072CAE4E7600E8FD1B /* ReminderVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293A0062CAE4E7500E8FD1B /* ReminderVm.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22151C052CAB9D2E00A6AFA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22151BEC2CAB9D2B00A6AFA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22151BF32CAB9D2C00A6AFA5;
+			remoteInfo = "belajar-swift";
+		};
+		22151C0F2CAB9D2E00A6AFA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22151BEC2CAB9D2B00A6AFA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22151BF32CAB9D2C00A6AFA5;
+			remoteInfo = "belajar-swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22151BF42CAB9D2C00A6AFA5 /* belajar-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "belajar-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22151BF72CAB9D2C00A6AFA5 /* belajar_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = belajar_swiftApp.swift; sourceTree = "<group>"; };
+		22151BF92CAB9D2C00A6AFA5 /* MyListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListScreen.swift; sourceTree = "<group>"; };
+		22151BFB2CAB9D2D00A6AFA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22151BFE2CAB9D2D00A6AFA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22151C042CAB9D2E00A6AFA5 /* belajar-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "belajar-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22151C082CAB9D2E00A6AFA5 /* belajar_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = belajar_swiftTests.swift; sourceTree = "<group>"; };
+		22151C0E2CAB9D2E00A6AFA5 /* belajar-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "belajar-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22151C122CAB9D2E00A6AFA5 /* belajar_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = belajar_swiftUITests.swift; sourceTree = "<group>"; };
+		22151C142CAB9D2E00A6AFA5 /* belajar_swiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = belajar_swiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		22151C282CABABD300A6AFA5 /* CardReminderStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardReminderStat.swift; sourceTree = "<group>"; };
+		22151C2A2CABB47200A6AFA5 /* AddMyListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyListScreen.swift; sourceTree = "<group>"; };
+		22151C2C2CABB6E300A6AFA5 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		22151C302CABD29000A6AFA5 /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
+		22151C332CABD37700A6AFA5 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		2293A0032CAE310C00E8FD1B /* ExtColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtColor.swift; sourceTree = "<group>"; };
+		2293A0062CAE4E7500E8FD1B /* ReminderVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVm.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22151BF12CAB9D2C00A6AFA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22151C012CAB9D2E00A6AFA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22151C0B2CAB9D2E00A6AFA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22151BEB2CAB9D2B00A6AFA5 = {
+			isa = PBXGroup;
+			children = (
+				22151BF62CAB9D2C00A6AFA5 /* belajar-swift */,
+				22151C072CAB9D2E00A6AFA5 /* belajar-swiftTests */,
+				22151C112CAB9D2E00A6AFA5 /* belajar-swiftUITests */,
+				22151BF52CAB9D2C00A6AFA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22151BF52CAB9D2C00A6AFA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22151BF42CAB9D2C00A6AFA5 /* belajar-swift.app */,
+				22151C042CAB9D2E00A6AFA5 /* belajar-swiftTests.xctest */,
+				22151C0E2CAB9D2E00A6AFA5 /* belajar-swiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22151BF62CAB9D2C00A6AFA5 /* belajar-swift */ = {
+			isa = PBXGroup;
+			children = (
+				2293A0022CAE30F800E8FD1B /* Utils */,
+				22151C212CAB9E0600A6AFA5 /* Feature */,
+				22151BF72CAB9D2C00A6AFA5 /* belajar_swiftApp.swift */,
+				22151BFB2CAB9D2D00A6AFA5 /* Assets.xcassets */,
+				22151BFD2CAB9D2D00A6AFA5 /* Preview Content */,
+			);
+			path = "belajar-swift";
+			sourceTree = "<group>";
+		};
+		22151BFD2CAB9D2D00A6AFA5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				22151BFE2CAB9D2D00A6AFA5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22151C072CAB9D2E00A6AFA5 /* belajar-swiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				22151C082CAB9D2E00A6AFA5 /* belajar_swiftTests.swift */,
+			);
+			path = "belajar-swiftTests";
+			sourceTree = "<group>";
+		};
+		22151C112CAB9D2E00A6AFA5 /* belajar-swiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				22151C122CAB9D2E00A6AFA5 /* belajar_swiftUITests.swift */,
+				22151C142CAB9D2E00A6AFA5 /* belajar_swiftUITestsLaunchTests.swift */,
+			);
+			path = "belajar-swiftUITests";
+			sourceTree = "<group>";
+		};
+		22151C212CAB9E0600A6AFA5 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				22151C222CAB9E3300A6AFA5 /* Reminder */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		22151C222CAB9E3300A6AFA5 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				2293A0052CAE4E5800E8FD1B /* ViewModel */,
+				22151C322CABD34B00A6AFA5 /* PreviewContent */,
+				22151C2E2CABD27300A6AFA5 /* Data */,
+				22151C232CAB9E5F00A6AFA5 /* Screens */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		22151C232CAB9E5F00A6AFA5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				22151C252CABA36000A6AFA5 /* Component */,
+				22151C242CABA35500A6AFA5 /* Page */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		22151C242CABA35500A6AFA5 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				22151BF92CAB9D2C00A6AFA5 /* MyListScreen.swift */,
+				22151C2A2CABB47200A6AFA5 /* AddMyListScreen.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		22151C252CABA36000A6AFA5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				22151C282CABABD300A6AFA5 /* CardReminderStat.swift */,
+				22151C2C2CABB6E300A6AFA5 /* ColorPicker.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		22151C2E2CABD27300A6AFA5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				22151C2F2CABD27D00A6AFA5 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		22151C2F2CABD27D00A6AFA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22151C302CABD29000A6AFA5 /* MyList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22151C322CABD34B00A6AFA5 /* PreviewContent */ = {
+			isa = PBXGroup;
+			children = (
+				22151C332CABD37700A6AFA5 /* PreviewContainer.swift */,
+			);
+			path = PreviewContent;
+			sourceTree = "<group>";
+		};
+		2293A0022CAE30F800E8FD1B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2293A0032CAE310C00E8FD1B /* ExtColor.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2293A0052CAE4E5800E8FD1B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2293A0062CAE4E7500E8FD1B /* ReminderVm.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22151BF32CAB9D2C00A6AFA5 /* belajar-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22151C182CAB9D2E00A6AFA5 /* Build configuration list for PBXNativeTarget "belajar-swift" */;
+			buildPhases = (
+				22151BF02CAB9D2C00A6AFA5 /* Sources */,
+				22151BF12CAB9D2C00A6AFA5 /* Frameworks */,
+				22151BF22CAB9D2C00A6AFA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "belajar-swift";
+			productName = "belajar-swift";
+			productReference = 22151BF42CAB9D2C00A6AFA5 /* belajar-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22151C032CAB9D2E00A6AFA5 /* belajar-swiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22151C1B2CAB9D2E00A6AFA5 /* Build configuration list for PBXNativeTarget "belajar-swiftTests" */;
+			buildPhases = (
+				22151C002CAB9D2E00A6AFA5 /* Sources */,
+				22151C012CAB9D2E00A6AFA5 /* Frameworks */,
+				22151C022CAB9D2E00A6AFA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22151C062CAB9D2E00A6AFA5 /* PBXTargetDependency */,
+			);
+			name = "belajar-swiftTests";
+			productName = "belajar-swiftTests";
+			productReference = 22151C042CAB9D2E00A6AFA5 /* belajar-swiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22151C0D2CAB9D2E00A6AFA5 /* belajar-swiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22151C1E2CAB9D2E00A6AFA5 /* Build configuration list for PBXNativeTarget "belajar-swiftUITests" */;
+			buildPhases = (
+				22151C0A2CAB9D2E00A6AFA5 /* Sources */,
+				22151C0B2CAB9D2E00A6AFA5 /* Frameworks */,
+				22151C0C2CAB9D2E00A6AFA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22151C102CAB9D2E00A6AFA5 /* PBXTargetDependency */,
+			);
+			name = "belajar-swiftUITests";
+			productName = "belajar-swiftUITests";
+			productReference = 22151C0E2CAB9D2E00A6AFA5 /* belajar-swiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22151BEC2CAB9D2B00A6AFA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					22151BF32CAB9D2C00A6AFA5 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					22151C032CAB9D2E00A6AFA5 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 22151BF32CAB9D2C00A6AFA5;
+					};
+					22151C0D2CAB9D2E00A6AFA5 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 22151BF32CAB9D2C00A6AFA5;
+					};
+				};
+			};
+			buildConfigurationList = 22151BEF2CAB9D2B00A6AFA5 /* Build configuration list for PBXProject "belajar-swift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22151BEB2CAB9D2B00A6AFA5;
+			productRefGroup = 22151BF52CAB9D2C00A6AFA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22151BF32CAB9D2C00A6AFA5 /* belajar-swift */,
+				22151C032CAB9D2E00A6AFA5 /* belajar-swiftTests */,
+				22151C0D2CAB9D2E00A6AFA5 /* belajar-swiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22151BF22CAB9D2C00A6AFA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22151BFF2CAB9D2D00A6AFA5 /* Preview Assets.xcassets in Resources */,
+				22151BFC2CAB9D2D00A6AFA5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22151C022CAB9D2E00A6AFA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22151C0C2CAB9D2E00A6AFA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22151BF02CAB9D2C00A6AFA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22151BFA2CAB9D2C00A6AFA5 /* MyListScreen.swift in Sources */,
+				2293A0042CAE310C00E8FD1B /* ExtColor.swift in Sources */,
+				22151C292CABABD300A6AFA5 /* CardReminderStat.swift in Sources */,
+				22151C2D2CABB6E300A6AFA5 /* ColorPicker.swift in Sources */,
+				22151BF82CAB9D2C00A6AFA5 /* belajar_swiftApp.swift in Sources */,
+				2293A0072CAE4E7600E8FD1B /* ReminderVm.swift in Sources */,
+				22151C2B2CABB47200A6AFA5 /* AddMyListScreen.swift in Sources */,
+				22151C342CABD37700A6AFA5 /* PreviewContainer.swift in Sources */,
+				22151C312CABD29000A6AFA5 /* MyList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22151C002CAB9D2E00A6AFA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22151C092CAB9D2E00A6AFA5 /* belajar_swiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22151C0A2CAB9D2E00A6AFA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22151C152CAB9D2E00A6AFA5 /* belajar_swiftUITestsLaunchTests.swift in Sources */,
+				22151C132CAB9D2E00A6AFA5 /* belajar_swiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22151C062CAB9D2E00A6AFA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22151BF32CAB9D2C00A6AFA5 /* belajar-swift */;
+			targetProxy = 22151C052CAB9D2E00A6AFA5 /* PBXContainerItemProxy */;
+		};
+		22151C102CAB9D2E00A6AFA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22151BF32CAB9D2C00A6AFA5 /* belajar-swift */;
+			targetProxy = 22151C0F2CAB9D2E00A6AFA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		22151C162CAB9D2E00A6AFA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		22151C172CAB9D2E00A6AFA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22151C192CAB9D2E00A6AFA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"belajar-swift/Preview Content\"";
+				DEVELOPMENT_TEAM = WZ7369QJSY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "id.belajar.fauzan.swift.belajar-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22151C1A2CAB9D2E00A6AFA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"belajar-swift/Preview Content\"";
+				DEVELOPMENT_TEAM = WZ7369QJSY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "id.belajar.fauzan.swift.belajar-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		22151C1C2CAB9D2E00A6AFA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7369QJSY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "id.belajar.fauzan.swift.belajar-swiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/belajar-swift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/belajar-swift";
+			};
+			name = Debug;
+		};
+		22151C1D2CAB9D2E00A6AFA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7369QJSY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "id.belajar.fauzan.swift.belajar-swiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/belajar-swift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/belajar-swift";
+			};
+			name = Release;
+		};
+		22151C1F2CAB9D2E00A6AFA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7369QJSY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "id.belajar.fauzan.swift.belajar-swiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "belajar-swift";
+			};
+			name = Debug;
+		};
+		22151C202CAB9D2E00A6AFA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7369QJSY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "id.belajar.fauzan.swift.belajar-swiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "belajar-swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22151BEF2CAB9D2B00A6AFA5 /* Build configuration list for PBXProject "belajar-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22151C162CAB9D2E00A6AFA5 /* Debug */,
+				22151C172CAB9D2E00A6AFA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22151C182CAB9D2E00A6AFA5 /* Build configuration list for PBXNativeTarget "belajar-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22151C192CAB9D2E00A6AFA5 /* Debug */,
+				22151C1A2CAB9D2E00A6AFA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22151C1B2CAB9D2E00A6AFA5 /* Build configuration list for PBXNativeTarget "belajar-swiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22151C1C2CAB9D2E00A6AFA5 /* Debug */,
+				22151C1D2CAB9D2E00A6AFA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22151C1E2CAB9D2E00A6AFA5 /* Build configuration list for PBXNativeTarget "belajar-swiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22151C1F2CAB9D2E00A6AFA5 /* Debug */,
+				22151C202CAB9D2E00A6AFA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22151BEC2CAB9D2B00A6AFA5 /* Project object */;
+}
