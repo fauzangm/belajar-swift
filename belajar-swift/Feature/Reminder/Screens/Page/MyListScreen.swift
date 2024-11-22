@@ -7,9 +7,11 @@
 
 import SwiftUI
 import SwiftData
+import Inject
 
 struct MyListScreen: View {
     
+    @ObserveInjection var Inject
     @Query private var myLists : [MyList]
     @State private var isPresented : Bool = false
     @State private var updateMyList : MyList? = nil
@@ -18,13 +20,12 @@ struct MyListScreen: View {
     @Environment(\.modelContext) private var context
     
     var body: some View {
-        
-        
         List{
-            
-            Text("Reminders")
+            Text("Remind")
                 .font(.largeTitle)
                 .bold()
+                
+    
             
             VStack{
                 HStack(){
@@ -72,7 +73,7 @@ struct MyListScreen: View {
                     
                 }
                 
-                
+            
             }
             .onDelete{indexes in
                 for index in indexes {
@@ -94,6 +95,8 @@ struct MyListScreen: View {
                     AddMyListScreen(updateMyList : $updateMyList)
                 }
             })
+            .enableInjection()
+
         
         
     }

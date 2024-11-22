@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct belajar_swiftApp: App {
@@ -14,5 +15,6 @@ struct belajar_swiftApp: App {
             MyListScreen()
                 .background(.black)
         }
+        .modelContainer(for: [MyList.self])
     }
 }
