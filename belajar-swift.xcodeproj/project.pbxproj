@@ -23,6 +23,7 @@
 		2293A0072CAE4E7600E8FD1B /* ReminderVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293A0062CAE4E7500E8FD1B /* ReminderVm.swift */; };
 		6B209E722CF04FB500400A4D /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 6B209E712CF04FB500400A4D /* Inject */; };
 		6B209E752CF0516400400A4D /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 6B209E742CF0516400400A4D /* Inject */; };
+		6B7F94CA2D0A91A200577C56 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F94C92D0A91A200577C56 /* MovieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		22151C332CABD37700A6AFA5 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		2293A0032CAE310C00E8FD1B /* ExtColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtColor.swift; sourceTree = "<group>"; };
 		2293A0062CAE4E7500E8FD1B /* ReminderVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVm.swift; sourceTree = "<group>"; };
+		6B7F94C92D0A91A200577C56 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		22151C212CAB9E0600A6AFA5 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				6B7F94BF2D0A910600577C56 /* Movie */,
 				22151C222CAB9E3300A6AFA5 /* Reminder */,
 			);
 			path = Feature;
@@ -230,6 +233,62 @@
 				2293A0062CAE4E7500E8FD1B /* ReminderVm.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6B7F94BF2D0A910600577C56 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				6B7F94C32D0A912E00577C56 /* Screen */,
+				6B7F94C22D0A912800577C56 /* ViewModel */,
+				6B7F94C12D0A912100577C56 /* Data */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		6B7F94C02D0A911800577C56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6B7F94C12D0A912100577C56 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6B7F94C02D0A911800577C56 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6B7F94C22D0A912800577C56 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6B7F94C32D0A912E00577C56 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6B7F94C52D0A913C00577C56 /* Page */,
+				6B7F94C42D0A913500577C56 /* Component */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		6B7F94C42D0A913500577C56 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		6B7F94C52D0A913C00577C56 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				6B7F94C92D0A91A200577C56 /* MovieView.swift */,
+			);
+			path = Page;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +429,7 @@
 				22151C292CABABD300A6AFA5 /* CardReminderStat.swift in Sources */,
 				22151C2D2CABB6E300A6AFA5 /* ColorPicker.swift in Sources */,
 				22151BF82CAB9D2C00A6AFA5 /* belajar_swiftApp.swift in Sources */,
+				6B7F94CA2D0A91A200577C56 /* MovieView.swift in Sources */,
 				2293A0072CAE4E7600E8FD1B /* ReminderVm.swift in Sources */,
 				22151C2B2CABB47200A6AFA5 /* AddMyListScreen.swift in Sources */,
 				22151C342CABD37700A6AFA5 /* PreviewContainer.swift in Sources */,
@@ -553,7 +613,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,7 +627,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -587,7 +647,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,7 +661,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
