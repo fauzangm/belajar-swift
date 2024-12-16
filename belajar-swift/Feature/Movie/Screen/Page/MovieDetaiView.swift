@@ -14,7 +14,7 @@ struct MovieDetaiView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var title: String = ""
     @State private var year: Int?
-    
+    @State private var showReviewScreen = false
     var body: some View {
         Form {
             TextField("Title", text: $title)
@@ -34,10 +34,32 @@ struct MovieDetaiView: View {
                 
             }.buttonStyle(.borderless)
             
+            Section("Reviews"){
+                Button(action: {
+                    showReviewScreen = true
+                }, label: {
+                    Image(systemName: "plus")
+                        .frame(maxWidth : .infinity, alignment: .trailing)
+                })
+                
+                if movie.reviews.isEmpty{
+                    ContentUnavailableView{
+                        Text("No Reviews")
+                    }
+                }else{
+                    ListingReviewMovie(movie: movie)
+                }
+            }
+            
         }.onAppear {
             title = movie.title
             year = movie.year
         }
+        .sheet(isPresented: $showReviewScreen, content: {
+            NavigationStack{
+                AddReviewScreen(movie: movie)
+            }
+        })
     }
 }
 
