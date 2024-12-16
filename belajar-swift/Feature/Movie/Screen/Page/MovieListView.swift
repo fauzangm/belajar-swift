@@ -9,31 +9,67 @@ import SwiftUI
 import SwiftData
 
 struct MovieListView: View {
-    
-    @Query(sort: [SortDescriptor<Movie>(\.title, order: .forward)])
-    private var movies: [Movie]
-
-    @State private var isAddItem = false
+    @Binding var navigationPath: NavigationPath
+    @Query(sort: \Movie.title, order: .forward) private var movies: [Movie]
+    @State private var isAddMoviePresented: Bool = false
     
     var body: some View {
-        List(movies) { movie in
-            Text(movie.title)
-        }
-        .sheet(isPresented: $isAddItem){
-            NavigationStack{
-                AddMovieView()
-            }
-        }
-        .toolbar{
-            ToolbarItem(placement: .topBarTrailing){
-                Button("Add Item"){
-                    isAddItem = true
+        BodyListingView(movies: movies,navigationPath : $navigationPath)
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add Movie") {
+                        isAddMoviePresented = true
+                    }
                 }
-            }
-        }
+            })
+            .sheet(isPresented: $isAddMoviePresented, content: {
+                NavigationStack {
+                    AddMovieView()
+                }
+            })
     }
 }
 
+
 #Preview {
-    MovieListView()
+    @Previewable @State var previewNavigationPath = NavigationPath()
+    MovieListView(navigationPath: $previewNavigationPath)
+}
+
+
+struct BodyListingView: View {
+    let movies: [Movie]
+    @Binding var navigationPath: NavigationPath
+    @Environment(\.modelContext) private var context
+    
+    private func deleteMovie(indexSet: IndexSet) {
+        
+        indexSet.forEach { index in
+            let movie = movies[index]
+            context.delete(movie)
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
+    
+    var body: some View {
+     
+        List {
+            ForEach(movies) { movie in
+                HStack {
+                    Text(movie.title)
+                    Spacer()
+                    Text(movie.year.description)
+                }
+                .onTapGesture {
+                    navigationPath.append(Screen.movieDetailScreen(movie))
+                }
+                
+            }.onDelete(perform: deleteMovie)
+        }
+    }
 }

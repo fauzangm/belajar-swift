@@ -12,7 +12,7 @@ import SwiftData
 struct belajar_swiftApp: App {
     var body: some Scene {
         WindowGroup {
-            MyListScreen()
+            RouteView()
                 .background(.black)
         }
         .modelContainer(for: [MyList.self, Movie.self])

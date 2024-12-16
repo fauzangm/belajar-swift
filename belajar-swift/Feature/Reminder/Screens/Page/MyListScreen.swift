@@ -32,107 +32,100 @@ struct MyListScreen: View {
     @State private var activeSheet: ActiveSheet?
     
     @Environment(\.modelContext) private var context
+    @Binding var navigationPath: NavigationPath
+    
     
     var body: some View {
-        NavigationStack{
-            List{
-                Text("Reminders")
-                    .font(.largeTitle)
-                    .bold()
+        List{
+            Text("Reminders")
+                .font(.largeTitle)
+                .bold()
+            
+            VStack{
+                HStack(){
+                    ReminderStatView(icon: "calendar", color: .red, textTitle: "Today",textCount: "10")
+                    ReminderStatView(icon: "calendar.circle.fill", color: .green, textTitle: "Schedule",textCount: "4")
+                }
                 
-                VStack{
-                    HStack(){
-                        ReminderStatView(icon: "calendar", color: .red, textTitle: "Today",textCount: "10")
-                        
-                        ReminderStatView(icon: "calendar.circle.fill", color: .green, textTitle: "Schedule",textCount: "4")
-                        
-                    }
-                    
-                    
-                    HStack(){
-                        ReminderStatView(icon: "archivebox.circle.fill", color: .purple, textTitle: "All",textCount: "5")
-                        
-                        ReminderStatView(icon: "calendar.badge.checkmark", color: .blue, textTitle: "Completed",textCount: "7")
-                        
-                    }
+                
+                HStack(){
+                    ReminderStatView(icon: "archivebox.circle.fill", color: .purple, textTitle: "All",textCount: "5")
+                    ReminderStatView(icon: "calendar.badge.checkmark", color: .blue, textTitle: "Completed",textCount: "7")
                     
                 }
-                .padding(.vertical)
                 
-                
-                Text("My Lists")
-                    .font(.largeTitle)
-                    .bold()
-                
-                ForEach(myLists){ item in
+            }
+            .padding(.vertical)
+            
+            
+            Text("My Lists")
+                .font(.largeTitle)
+                .bold()
+            
+            ForEach(myLists){ item in
+                HStack{
+                    
                     HStack{
-                        
-                        HStack{
-                            Image(systemName: "line.3.horizontal.circle.fill")
-                                .font(.system(size: 24))
-                                .foregroundColor(Color(hex: item.colorCode))
-                            Text(item.name)
+                        Image(systemName: "line.3.horizontal.circle.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(Color(hex: item.colorCode))
+                        Text(item.name)
+                    }
+                    
+                    Spacer()
+                    
+                    Image(systemName: "arrowtriangle.down.circle")
+                        .onTapGesture {
+                            updateMyList = item
+                            activeSheet = .sheet1
                         }
-                        
-                        Spacer()
-                        
-                        Image(systemName: "arrowtriangle.down.circle")
-                            .onTapGesture {
-                                updateMyList = item
-                                activeSheet = .sheet1
-                            }
-                        
-                        
-                        
-                    }
-                    
-                    
-                }
-                .onDelete{indexes in
-                    for index in indexes {
-                        deleteItem(myLists[index])
-                    }
                 }
                 
-                Button(action: {
-                    activeSheet = .sheet2
-                }, label: {
-                    Text("Add List")
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .trailing)
-                    
-                })
-                
-                
-                NavigationLink(destination: MovieListView(), label: {
-                    Text("Go To Moviess")
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .trailing)
-                })
                 
             }
-            .listStyle(.insetGrouped)
-            //            .sheet(isPresented: $isPresented, content: {
-            //                NavigationStack{
-            //                    AddMyListScreen(updateMyList : $updateMyList)
-            //                }
-            //            })
-            .sheet(item: $activeSheet) { sheet in
-                switch sheet {
-                case .sheet1:
-                    NavigationStack{
-                        AddMyListScreen(updateMyList : $updateMyList)
-                    }
-                case .sheet2:
-                    NavigationStack{
-                        AddMyListScreen(updateMyList : $updateMyList)
-                    }
+            .onDelete{indexes in
+                for index in indexes {
+                    deleteItem(myLists[index])
                 }
             }
-            .enableInjection()
+            
+            Button(action: {
+                activeSheet = .sheet2
+            }, label: {
+                Text("Add List")
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .trailing)
+                
+            })
+            
+            
+            
+            Text("Go To Moviess")
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .trailing)
+                .onTapGesture {
+                    navigationPath.append(Screen.movieListScreen)
+                }
+            
+            
         }
-        
-        
-        
+        .listStyle(.insetGrouped)
+        .sheet(item: $activeSheet) { sheet in
+            switch sheet {
+            case .sheet1:
+                NavigationStack{
+                    AddMyListScreen(updateMyList : $updateMyList)
+                }
+            case .sheet2:
+                NavigationStack{
+                    AddMyListScreen(updateMyList : $updateMyList)
+                }
+            }
+        }
+        .enableInjection()
     }
+    
+    
+    
+    
     
     func deleteItem(_ item : MyList) {
         context.delete(item)
@@ -145,9 +138,9 @@ struct MyListScreen: View {
 
 
 #Preview { @MainActor in
-    
+    @Previewable @State var previewNavigationPath = NavigationPath()
     NavigationStack{
-        MyListScreen()
+        MyListScreen(navigationPath: $previewNavigationPath)
     }.modelContainer(previewContainer)
 }
 
