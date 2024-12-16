@@ -15,6 +15,6 @@ struct belajar_swiftApp: App {
             MyListScreen()
                 .background(.black)
         }
-        .modelContainer(for: [MyList.self])
+        .modelContainer(for: [MyList.self, Movie.self])
     }
 }

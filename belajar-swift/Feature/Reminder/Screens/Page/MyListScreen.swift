@@ -103,8 +103,8 @@ struct MyListScreen: View {
                 })
                 
                 
-                NavigationLink(destination: MovieView(), label: {
-                    Text("Go To Movie")
+                NavigationLink(destination: MovieListView(), label: {
+                    Text("Go To Moviess")
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .trailing)
                 })
                 
