@@ -43,7 +43,7 @@ struct MovieListView: View {
                 }
             }
    
-            ListingMovie(movies: movieFilter,navigationPath : $navigationPath)
+            ListingMovie(navigationPath : $navigationPath,filterOption: filterOption)
             
             Text("Actors")
                 .font(.largeTitle)
