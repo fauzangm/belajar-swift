@@ -8,15 +8,6 @@
 import SwiftUI
 import SwiftData
 
-enum Sheet : Identifiable {
-    case addMovie
-    case addActor
-    case showFilter
-    
-    var id : Int {
-        hashValue
-    }
-}
 
 struct MovieListView: View {
     
@@ -32,6 +23,7 @@ struct MovieListView: View {
     
     @State private var activeSheet : Sheet?
     @State private var actorName = ""
+    @State private var filterOption : FilterOption = .none
     
     private func saveActor(){
         let actor =  Actor(name: actorName)
@@ -40,8 +32,17 @@ struct MovieListView: View {
     }
     var body: some View {
         VStack (alignment : .leading){
-            Text("Movies")
-                .font(.largeTitle)
+            
+            HStack(alignment : .firstTextBaseline){
+                Text("Movies")
+                    .font(.largeTitle)
+                
+                Spacer()
+                Button("Filter"){
+                    activeSheet = .showFilter
+                }
+            }
+   
             ListingMovie(movies: movieFilter,navigationPath : $navigationPath)
             
             Text("Actors")
@@ -87,7 +88,7 @@ struct MovieListView: View {
                 }
                 
             case .showFilter :
-                Text("Show Filter")
+                FilterMovie(filterOption: $filterOption)
                 
             }
             
