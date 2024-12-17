@@ -9,24 +9,67 @@ import SwiftUI
 import SwiftData
 
 struct MovieListView: View {
+    
+    @Environment(\.modelContext) private var context
     @Binding var navigationPath: NavigationPath
     @Query(sort: \Movie.title, order: .forward) private var movies: [Movie]
-    @State private var isAddMoviePresented: Bool = false
+    @Query(sort: \Actor.name, order: .forward) private var actors: [Actor]
     
+    @State private var isAddMoviePresented: Bool = false
+    @State private var isAddActor: Bool = false
+    @State private var actorName = ""
+    
+    private func saveActor(){
+        let actor =  Actor(name: actorName)
+        context.insert(actor)
+    
+    }
     var body: some View {
-        BodyListingView(movies: movies,navigationPath : $navigationPath)
-            .toolbar(content: {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add Movie") {
-                        isAddMoviePresented = true
-                    }
+        VStack (alignment : .leading){
+            Text("Movies")
+                .font(.largeTitle)
+            ListingMovie(movies: movies,navigationPath : $navigationPath)
+            
+            Text("Actors")
+                .font(.largeTitle)
+            ListingActor(actors: actors, navigationPath: $navigationPath)
+        
+            
+        }
+        .padding()
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add Actor") {
+                    isAddActor = true
                 }
-            })
-            .sheet(isPresented: $isAddMoviePresented, content: {
-                NavigationStack {
-                    AddMovieView()
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add Movie") {
+                    isAddMoviePresented = true
                 }
-            })
+            }
+            
+        })
+        .sheet(isPresented: $isAddMoviePresented, content: {
+            NavigationStack {
+                AddMovieView()
+            }
+        })
+        .sheet(isPresented: $isAddActor, content: {
+            Text("Add Actor")
+                .font(.largeTitle)
+            
+            TextField("Actor name", text: $actorName)
+                .textFieldStyle(.roundedBorder)
+                .presentationDetents([.fraction(0.25)])
+                .padding()
+            
+            Button("Save") {
+                isAddActor = false
+                saveActor()
+            }
+        })
+      
     }
 }
 
@@ -36,40 +79,3 @@ struct MovieListView: View {
     MovieListView(navigationPath: $previewNavigationPath)
 }
 
-
-struct BodyListingView: View {
-    let movies: [Movie]
-    @Binding var navigationPath: NavigationPath
-    @Environment(\.modelContext) private var context
-    
-    private func deleteMovie(indexSet: IndexSet) {
-        
-        indexSet.forEach { index in
-            let movie = movies[index]
-            context.delete(movie)
-            do {
-                try context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        
-    }
-    
-    var body: some View {
-     
-        List {
-            ForEach(movies) { movie in
-                HStack {
-                    Text(movie.title)
-                    Spacer()
-                    Text(movie.year.description)
-                }
-                .onTapGesture {
-                    navigationPath.append(Screen.movieDetailScreen(movie))
-                }
-                
-            }.onDelete(perform: deleteMovie)
-        }
-    }
-}

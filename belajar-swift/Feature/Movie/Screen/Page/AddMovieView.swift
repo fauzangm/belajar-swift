@@ -16,9 +16,10 @@ struct AddMovieView: View {
     @State private var year : Int?
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
+    @State private var selectedActors : Set<Actor> = []
     
     private var isFormValid : Bool {
-        !title.isEmptyOrWhiteSpace && year != nil
+        !title.isEmptyOrWhiteSpace && year != nil && !selectedActors.isEmpty
     }
     var body: some View {
         NavigationStack{
@@ -26,6 +27,12 @@ struct AddMovieView: View {
                 Form{
                     TextField("Title", text: $title)
                     TextField("Year", value: $year,format: .number)
+                    
+                    Section("Select Actors") {
+                        ActorSelectionView(
+                            selectedActors: $selectedActors
+                        )
+                    }
                 }
             }
         }
@@ -39,7 +46,18 @@ struct AddMovieView: View {
             ToolbarItem(placement : .topBarTrailing){
                 Button ("Save"){
                     guard let year = year else {return}
+                    
+                    //insert movie
                     let movie =  Movie(title: title, year: year)
+                    movie.actors = Array(selectedActors)
+             
+                    
+                    //insert actor
+                    selectedActors.forEach{ actor in
+                        actor.movies.append(movie)
+                        context.insert(actor)
+                    }
+                    
                     context.insert(movie)
                     do{
                         try context.save()

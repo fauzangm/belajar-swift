@@ -15,6 +15,6 @@ struct belajar_swiftApp: App {
             RouteView()
                 .background(.black)
         }
-        .modelContainer(for: [MyList.self, Movie.self])
+        .modelContainer(for: [MyList.self, Movie.self, Review.self, Actor.self])
     }
 }

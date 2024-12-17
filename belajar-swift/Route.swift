@@ -12,6 +12,7 @@ import SwiftUI
 enum Screen: Hashable {
     case movieListScreen
     case movieDetailScreen(Movie)
+    case actorDetailScreen(Actor)
 }
 
 struct RouteView: View {
@@ -26,6 +27,8 @@ struct RouteView: View {
                         MovieListView(navigationPath: $navigationPath)
                     case .movieDetailScreen(let movie):
                         MovieDetaiView(navigationPath: $navigationPath, movie: movie)
+                    case .actorDetailScreen(let actor):
+                        ActorDetailView(actor: actor)
                     }
                 }
         }
@@ -35,8 +38,6 @@ struct RouteView: View {
 
 
 // Studi kasus navigation Kompleks
-
-
 struct ScreensStudyCase5: View {
     @State private var navigationPath = NavigationPath() // Navigation Path untuk mengelola stack
 
