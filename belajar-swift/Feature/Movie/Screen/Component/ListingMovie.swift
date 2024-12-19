@@ -11,22 +11,25 @@ import SwiftData
 struct ListingMovie: View {
     
     @Binding var navigationPath: NavigationPath
-    @Query private var movies : [Movie]
+    @Query private var allMovies : [Movie]
     let filterOption : FilterOption
     
-     init(navigationPath: Binding<NavigationPath>, filterOption : FilterOption = .none) {
-         self._navigationPath = navigationPath
-         self.filterOption = filterOption
-     
-         switch self.filterOption {
-         case .title(let movieTitle):
-             _movies = Query(filter: #Predicate {$0.title.contains(movieTitle)})
-         case .none:
-             _movies = Query()
-         }
-     }
+    private var movies: [Movie] {
+        switch filterOption {
+        case .title(let movieTitle):
+            // Filter dilakukan di SwiftUI untuk case-insensitive
+            return allMovies.filter { $0.title.lowercased().contains(movieTitle.lowercased()) }
+        case .none:
+            return allMovies
+        }
+    }
     
-
+    init(navigationPath: Binding<NavigationPath>, filterOption: FilterOption = .none) {
+        self._navigationPath = navigationPath
+        self.filterOption = filterOption
+    }
+    
+    
     @Environment(\.modelContext) private var context
     
     private func deleteMovie(indexSet: IndexSet) {
@@ -44,7 +47,7 @@ struct ListingMovie: View {
     }
     
     var body: some View {
-    
+        
         List {
             ForEach(movies) { movie in
                 HStack {

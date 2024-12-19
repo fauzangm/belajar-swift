@@ -19,7 +19,11 @@ struct FilterMovie: View {
             Section("Filter by title") {
                 TextField("Movie title", text: $movieTitle)
                 Button("Search") {
-                    filterOption = .title(movieTitle)
+                    if movieTitle.isEmpty {
+                        filterOption = .none
+                    }else{
+                        filterOption = .title(movieTitle)
+                    }
                     dismiss()
                 }
             }
