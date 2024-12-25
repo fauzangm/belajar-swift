@@ -21,6 +21,12 @@ struct ListingMovie: View {
             return allMovies.filter { $0.title.lowercased().contains(movieTitle.lowercased()) }
         case .none:
             return allMovies
+        case .reviewsCount(let numberOfReviews):
+            return allMovies.filter({ $0.reviews.count == numberOfReviews })
+        case .actorsCount(let numberOfActors):
+            return allMovies.filter({ $0.actors.count == numberOfActors })
+        case .actorName(let actorName):
+            return allMovies.filter({ $0.actors.contains(where: { $0.name.contains(actorName) })})
         }
     }
     
@@ -50,8 +56,14 @@ struct ListingMovie: View {
         
         List {
             ForEach(movies) { movie in
-                HStack {
-                    Text(movie.title)
+                HStack(alignment: .firstTextBaseline) {
+                    VStack(alignment: .leading) {
+                        Text(movie.title)
+                        Text("Number of reviews: \(movie.reviewsCount)")
+                            .font(.caption)
+                        Text("Number of actors: \(movie.actorsCount)")
+                            .font(.caption)
+                    }
                     Spacer()
                     Text(movie.year.description)
                 }

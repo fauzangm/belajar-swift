@@ -9,6 +9,9 @@ import Foundation
 
 enum FilterOption {
     case title(String)
+    case reviewsCount(Int)
+    case actorsCount(Int)
+    case actorName(String)
     case none
 }
 

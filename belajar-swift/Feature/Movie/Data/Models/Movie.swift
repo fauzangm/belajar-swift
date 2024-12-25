@@ -14,6 +14,14 @@ final class Movie {
     var title : String
     var year : Int
     
+    var reviewsCount: Int {
+        reviews.count
+    }
+    
+    var actorsCount: Int {
+        actors.count
+    }
+    
     @Relationship(inverse: \Review.movie)
     var reviews : [Review] = []
     
@@ -24,4 +32,5 @@ final class Movie {
         self.title = title
         self.year = year
     }
+    
 }
