@@ -12,11 +12,11 @@ import SwiftData
 var previewContainer : ModelContainer = {
     
     let container = try! ModelContainer(for: MyList.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
-    return container
     
     for myList in SampelData.mylist{
         container.mainContext.insert(myList)
     }
+    return container
     
 }()
 

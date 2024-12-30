@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ActorDetailView: View {
-    let actor : Actor
+    let actor : ActorsMovie
     @Environment(\.modelContext) private var context
     
     @State private var selectedMovie : Set<Movie> = []
@@ -30,6 +30,6 @@ struct ActorDetailView: View {
 
 #Preview {
     ActorDetailView(
-        actor: Actor(name: "Fauzan")
+        actor: ActorsMovie(name: "Fauzan")
     )
 }

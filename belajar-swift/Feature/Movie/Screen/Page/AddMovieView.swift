@@ -16,7 +16,8 @@ struct AddMovieView: View {
     @State private var year : Int?
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
-    @State private var selectedActors : Set<Actor> = []
+    @State private var selectedActors : Set<ActorsMovie> = []
+    @State private var genre: Genre = .action
     
     private var isFormValid : Bool {
         !title.isEmptyOrWhiteSpace && year != nil && !selectedActors.isEmpty
@@ -25,6 +26,13 @@ struct AddMovieView: View {
         NavigationStack{
             VStack{
                 Form{
+                    
+                    Picker("Select Genre", selection: $genre) {
+                        ForEach(Genre.allCases) { genre in
+                            Text(genre.title).tag(genre)
+                        }
+                    }.pickerStyle(.segmented)
+                    
                     TextField("Title", text: $title)
                     TextField("Year", value: $year,format: .number)
                     
@@ -48,7 +56,7 @@ struct AddMovieView: View {
                     guard let year = year else {return}
                     
                     //insert movie
-                    let movie =  Movie(title: title, year: year)
+                    let movie =  Movie(title: title, year: year,genre: genre)
                     movie.actors = Array(selectedActors)
              
                     

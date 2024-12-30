@@ -15,7 +15,7 @@ struct MovieListView: View {
     @Binding var navigationPath: NavigationPath
     
     @Query(sort: \Movie.title, order: .forward) private var movies: [Movie]
-    @Query(sort: \Actor.name, order: .forward) private var actors: [Actor]
+    @Query(sort: \ActorsMovie.name, order: .forward) private var actors: [ActorsMovie]
     
     
     @Query(filter: #Predicate<Movie> { $0.year > 500 && $0.actors.count > 2 })
@@ -25,9 +25,15 @@ struct MovieListView: View {
     @State private var actorName = ""
     @State private var filterOption : FilterOption = .none
     
-    private func saveActor(){
-        let actor =  Actor(name: actorName)
+    private func saveActor() {
+        
+        let actor = ActorsMovie(name: actorName)
         context.insert(actor)
+        do {
+            try context.save()
+        } catch {
+            print("Failed to save actor: \(error)")
+        }
         
     }
     var body: some View {

@@ -15,8 +15,15 @@ struct MovieDetaiView: View {
     @State private var title: String = ""
     @State private var year: Int?
     @State private var showReviewScreen = false
+    @State private var genre: Genre = .action
     var body: some View {
         Form {
+            Picker("Select Genre", selection: $genre) {
+                ForEach(Genre.allCases) { genre in
+                    Text(genre.title).tag(genre)
+                }
+            }.pickerStyle(.segmented)
+            
             TextField("Title", text: $title)
             TextField("Year", value: $year, format: .number)
             Button("Update") {
@@ -24,6 +31,7 @@ struct MovieDetaiView: View {
                 
                 movie.title = title
                 movie.year = year
+                movie.genreId = genre.id
                 
                 do {
                     try context.save()
@@ -67,6 +75,7 @@ struct MovieDetaiView: View {
         }.onAppear {
             title = movie.title
             year = movie.year
+            genre = movie.genre
         }
         .sheet(isPresented: $showReviewScreen, content: {
             NavigationStack{
@@ -88,7 +97,7 @@ struct MovieDetailContainerScreen: View {
             }
         }
         .onAppear {
-            movie = Movie(title: "Spiderman", year: 2023)
+            movie = Movie(title: "Spiderman", year: 2023,genre: .action)
             context.insert(movie!)
         }
     }

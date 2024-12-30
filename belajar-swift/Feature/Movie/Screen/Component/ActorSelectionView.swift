@@ -10,8 +10,8 @@ import SwiftData
 
 struct ActorSelectionView: View {
 
-    @Query(sort: \Actor.name, order: .forward) private var actors: [Actor]
-    @Binding var selectedActors : Set<Actor>
+    @Query(sort: \ActorsMovie.name, order: .forward) private var actors: [ActorsMovie]
+    @Binding var selectedActors : Set<ActorsMovie>
     var body: some View {
         List(actors) {actor in
             HStack {

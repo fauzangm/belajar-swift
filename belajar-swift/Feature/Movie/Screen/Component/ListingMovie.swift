@@ -27,6 +27,8 @@ struct ListingMovie: View {
             return allMovies.filter({ $0.actors.count == numberOfActors })
         case .actorName(let actorName):
             return allMovies.filter({ $0.actors.contains(where: { $0.name.contains(actorName) })})
+        case .genre(let genre):
+            return allMovies.filter({$0.genreId == genre.id }) 
         }
     }
     

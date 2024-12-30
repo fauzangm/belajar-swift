@@ -13,7 +13,7 @@ class MovieVM : ObservableObject {
     @Environment(\.modelContext) private var context
     
     
-    func deleteActor(_ actor: Actor) {
+    func deleteActor(_ actor: ActorsMovie) {
            // Menghapus referensi actor dari semua movie
            actor.movies.forEach { movie in
                if let actorIndex = movie.actors.firstIndex(of: actor) {

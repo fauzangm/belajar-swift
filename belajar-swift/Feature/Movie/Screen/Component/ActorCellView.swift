@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ActorCellView: View {
-    let actor : Actor
+    let actor : ActorsMovie
     var body: some View {
         VStack (alignment : .leading){
             Text(actor.name)

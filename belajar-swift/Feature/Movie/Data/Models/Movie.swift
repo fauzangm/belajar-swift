@@ -13,6 +13,11 @@ final class Movie {
 //    @Attribute(.unique) var id : String //Jika Unik Variabel
     var title : String
     var year : Int
+    var genreId: Int
+    
+    var genre: Genre {
+        Genre(rawValue: genreId)!
+    }
     
     var reviewsCount: Int {
         reviews.count
@@ -25,12 +30,13 @@ final class Movie {
     @Relationship(inverse: \Review.movie)
     var reviews : [Review] = []
     
-    @Relationship(inverse: \Actor.movies)
-    var actors : [Actor] = []
+    @Relationship(inverse: \ActorsMovie.movies)
+    var actors : [ActorsMovie] = []
     
-    init(title: String, year: Int) {
+    init(title: String, year: Int, genre: Genre) {
         self.title = title
         self.year = year
+        self.genreId = genre.id
     }
     
 }

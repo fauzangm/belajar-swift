@@ -15,8 +15,8 @@ struct FilterMovie: View {
     @State private var numberOfReviews: Int?
     @State private var numberOfActors: Int?
     @State private var actorName: String = ""
-    
     @Binding var filterOption: FilterOption
+    @State private var genre: Genre = .action
     
     var body: some View {
         Form {
@@ -69,6 +69,19 @@ struct FilterMovie: View {
                     }
                     dismiss()
                 }
+            }
+            
+            Section("Filter by genre") {
+                
+                Picker("Select a genre", selection: $genre) {
+                    ForEach(Genre.allCases) { genre in
+                        Text(genre.title).tag(genre)
+                    }
+                }.onChange(of: genre) {
+                    filterOption = .genre(genre)
+                    dismiss()
+                }
+                
             }
         }
     }

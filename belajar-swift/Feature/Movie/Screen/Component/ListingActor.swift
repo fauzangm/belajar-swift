@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListingActor: View {
-    let actors: [Actor]
+    let actors: [ActorsMovie]
     @Binding var navigationPath: NavigationPath
     @Environment(\.modelContext) private var context
     @StateObject private var viewModel = MovieVM()

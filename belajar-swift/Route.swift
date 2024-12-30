@@ -12,7 +12,7 @@ import SwiftUI
 enum Screen: Hashable {
     case movieListScreen
     case movieDetailScreen(Movie)
-    case actorDetailScreen(Actor)
+    case actorDetailScreen(ActorsMovie)
 }
 
 struct RouteView: View {
