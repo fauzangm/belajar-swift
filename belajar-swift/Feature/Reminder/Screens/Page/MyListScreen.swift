@@ -105,6 +105,12 @@ struct MyListScreen: View {
                     navigationPath.append(Screen.movieListScreen)
                 }
             
+            Text("Go To Publisher")
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .trailing)
+                .onTapGesture {
+                    navigationPath.append(Screen.publisherScreen)
+                }
+            
             
         }
         .listStyle(.insetGrouped)

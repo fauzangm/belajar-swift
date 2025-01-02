@@ -25,6 +25,11 @@ struct FilterSelectionConfig {
 }
 
 
+// Enum for Categories
+enum NewsCategory: String, CaseIterable {
+    case technology, sports, entertainment
+}
+
 
 
 enum Sheet : Identifiable {

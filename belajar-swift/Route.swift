@@ -13,6 +13,8 @@ enum Screen: Hashable {
     case movieListScreen
     case movieDetailScreen(Movie)
     case actorDetailScreen(ActorsMovie)
+    case publisherScreen
+    case newsAppViewScreen
 }
 
 struct RouteView: View {
@@ -29,6 +31,10 @@ struct RouteView: View {
                         MovieDetaiView(navigationPath: $navigationPath, movie: movie)
                     case .actorDetailScreen(let actor):
                         ActorDetailView(actor: actor)
+                    case .publisherScreen:
+                        PublisherView(navigationPath: $navigationPath)
+                    case .newsAppViewScreen:
+                        NewsAppView()
                     }
                 }
         }
