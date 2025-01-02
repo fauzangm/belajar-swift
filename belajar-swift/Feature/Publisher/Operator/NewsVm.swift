@@ -15,7 +15,7 @@ class NewsViewModel: ObservableObject {
     private let categoryPublisher = PassthroughSubject<NewsCategory, Never>()
     
     @Published var todos: [Todo] = []
-    @Published var articles: [String] = ["Tech Article 1", "Tech Article 2", "Tech Article 3"]
+    @Published var articles: [String] = []
     @Published var errorMessage: String? // Tambahkan untuk error handling
     
     init() {

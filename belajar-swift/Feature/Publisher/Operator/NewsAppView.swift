@@ -28,6 +28,9 @@ struct NewsAppView: View {
             
             TodoList()
         }
+        .onAppear{
+            viewModel.setCategory(selectedCategory)
+        }
     }
     
 }

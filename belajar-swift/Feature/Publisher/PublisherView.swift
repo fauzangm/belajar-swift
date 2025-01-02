@@ -18,8 +18,14 @@ struct PublisherView: View {
         }
         .toolbar(content: {
             ToolbarItem(placement : .topBarTrailing){
-                Button("Sampel Operator"){
+                Button("Operator"){
                     navigationPath.append(Screen.newsAppViewScreen)
+                }
+            }
+            
+            ToolbarItem(placement : .topBarTrailing){
+                Button("Filter"){
+                    navigationPath.append(Screen.listingFilterScreen)
                 }
             }
         })

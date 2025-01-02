@@ -15,6 +15,7 @@ enum Screen: Hashable {
     case actorDetailScreen(ActorsMovie)
     case publisherScreen
     case newsAppViewScreen
+    case listingFilterScreen
 }
 
 struct RouteView: View {
@@ -35,6 +36,8 @@ struct RouteView: View {
                         PublisherView(navigationPath: $navigationPath)
                     case .newsAppViewScreen:
                         NewsAppView()
+                    case .listingFilterScreen:
+                        ListingFilterView()
                     }
                 }
         }
