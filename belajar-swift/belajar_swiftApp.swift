@@ -19,11 +19,11 @@ struct belajar_swiftApp: App {
             RouteView()
                 .background(.black)
         }
-        .modelContainer(for: [MyList.self, Movie.self,ActorsMovie.self])
+        .modelContainer(for: [MyList.self, Movie.self,ActorsMovie.self,Review.self])
     }
     
     private func handleModelChange() {
-         let currentModelVersion = "1.0.0" // Ganti sesuai versi model
+         let currentModelVersion = "1.0.1" // Ganti sesuai versi model
          let savedModelVersion = UserDefaults.standard.string(forKey: "modelVersion")
          
          if savedModelVersion != currentModelVersion {

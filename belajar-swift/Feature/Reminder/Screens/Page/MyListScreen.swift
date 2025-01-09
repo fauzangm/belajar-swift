@@ -111,6 +111,12 @@ struct MyListScreen: View {
                     navigationPath.append(Screen.publisherScreen)
                 }
             
+            Text("Go To KasTransaksi")
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .trailing)
+                .onTapGesture {
+                    navigationPath.append(Screen.kasTransaksiScreen)
+                }
+            
             
         }
         .listStyle(.insetGrouped)

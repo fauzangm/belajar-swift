@@ -41,6 +41,8 @@
 		6B727E412D266CC000E226E2 /* MovieFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B727E402D266CC000E226E2 /* MovieFilter.swift */; };
 		6B727E432D266D3F00E226E2 /* FilterVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B727E422D266D3F00E226E2 /* FilterVm.swift */; };
 		6B7F94CA2D0A91A200577C56 /* AddMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F94C92D0A91A200577C56 /* AddMovieView.swift */; };
+		6BC533B02D27B9D000AAD10F /* KasTransaksiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC533AF2D27B9D000AAD10F /* KasTransaksiView.swift */; };
+		6BC533B42D27D10700AAD10F /* KasTransaksiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC533B32D27D10700AAD10F /* KasTransaksiModel.swift */; };
 		6BE6434D2D0ABB6600EFB5B4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6434C2D0ABB6600EFB5B4 /* Movie.swift */; };
 		6BE6434F2D0AC54900EFB5B4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6434E2D0AC54900EFB5B4 /* String+Extensions.swift */; };
 		6BE643512D0AD15800EFB5B4 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE643502D0AD15800EFB5B4 /* MovieListView.swift */; };
@@ -110,7 +112,10 @@
 		6B727E3E2D266CA500E226E2 /* ListingFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingFilterView.swift; sourceTree = "<group>"; };
 		6B727E402D266CC000E226E2 /* MovieFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFilter.swift; sourceTree = "<group>"; };
 		6B727E422D266D3F00E226E2 /* FilterVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVm.swift; sourceTree = "<group>"; };
+		6B727E452D2683FA00E226E2 /* debugging.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = debugging.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6B7F94C92D0A91A200577C56 /* AddMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieView.swift; sourceTree = "<group>"; };
+		6BC533AF2D27B9D000AAD10F /* KasTransaksiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasTransaksiView.swift; sourceTree = "<group>"; };
+		6BC533B32D27D10700AAD10F /* KasTransaksiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasTransaksiModel.swift; sourceTree = "<group>"; };
 		6BE6434C2D0ABB6600EFB5B4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		6BE6434E2D0AC54900EFB5B4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		6BE643502D0AD15800EFB5B4 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 		22151C212CAB9E0600A6AFA5 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				6B727E442D2681A300E226E2 /* KasTransaksi */,
 				6BF8BF582D22801F0043952C /* Publisher */,
 				6B7F94BF2D0A910600577C56 /* Movie */,
 				22151C222CAB9E3300A6AFA5 /* Reminder */,
@@ -330,10 +336,20 @@
 		6B727E3D2D266C7300E226E2 /* FilterAndPaging */ = {
 			isa = PBXGroup;
 			children = (
+				6B727E452D2683FA00E226E2 /* debugging.playground */,
 				6B727E3E2D266CA500E226E2 /* ListingFilterView.swift */,
 				6B727E422D266D3F00E226E2 /* FilterVm.swift */,
 			);
 			path = FilterAndPaging;
+			sourceTree = "<group>";
+		};
+		6B727E442D2681A300E226E2 /* KasTransaksi */ = {
+			isa = PBXGroup;
+			children = (
+				6BC533B12D27CFE400AAD10F /* Data */,
+				6BC533AF2D27B9D000AAD10F /* KasTransaksiView.swift */,
+			);
+			path = KasTransaksi;
 			sourceTree = "<group>";
 		};
 		6B7F94BF2D0A910600577C56 /* Movie */ = {
@@ -406,6 +422,22 @@
 				6B28324C2D11191000B04BDE /* ActorDetailView.swift */,
 			);
 			path = Page;
+			sourceTree = "<group>";
+		};
+		6BC533B12D27CFE400AAD10F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6BC533B22D27CFEB00AAD10F /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6BC533B22D27CFEB00AAD10F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BC533B32D27D10700AAD10F /* KasTransaksiModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6BF8BF582D22801F0043952C /* Publisher */ = {
@@ -559,11 +591,13 @@
 				2293A0042CAE310C00E8FD1B /* ExtColor.swift in Sources */,
 				6B2832552D115C0A00B04BDE /* enum.swift in Sources */,
 				22151C292CABABD300A6AFA5 /* CardReminderStat.swift in Sources */,
+				6BC533B42D27D10700AAD10F /* KasTransaksiModel.swift in Sources */,
 				6B1DC9792D0FD1DC0096EE53 /* Route.swift in Sources */,
 				6B727E352D263D3000E226E2 /* NewsAppView.swift in Sources */,
 				6B28324B2D11170300B04BDE /* ActorCellView.swift in Sources */,
 				22151C2D2CABB6E300A6AFA5 /* ColorPicker.swift in Sources */,
 				6BE6434F2D0AC54900EFB5B4 /* String+Extensions.swift in Sources */,
+				6BC533B02D27B9D000AAD10F /* KasTransaksiView.swift in Sources */,
 				6BFFF3EF2D101CE200084FBB /* Actor.swift in Sources */,
 				6B2832452D110CFD00B04BDE /* ListingMovie.swift in Sources */,
 				6B727E372D263FA100E226E2 /* NewsVm.swift in Sources */,
