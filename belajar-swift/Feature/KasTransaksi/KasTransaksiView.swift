@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct KasTransaksiView: View {
+    @Binding var navigationPath: NavigationPath
     @Environment(\.dismiss) private var dismiss
     // Contoh data
     @State private var showAddKeuangan = false
@@ -40,7 +41,8 @@ struct KasTransaksiView: View {
 }
 
 #Preview {
-    KasTransaksiView()
+    @Previewable @State var previewNavigationPath = NavigationPath()
+    KasTransaksiView(navigationPath : $previewNavigationPath)
 }
 
 
@@ -83,10 +85,11 @@ extension KasTransaksiView {
                         title: Text("Silahkan Pilih Jenis Transaksi"),
                         message: Text("Pilih transaksi: Keluar untuk pengurangan saldo, atau Masuk untuk penambahan saldo."),
                         primaryButton: .cancel(Text("Masuk"),action: {
-                            
+                            navigationPath.append(Screen.formKasTransaksiScreen)
                         }),
                         secondaryButton: .destructive(Text("Keluar"),action: {
                             
+                            navigationPath.append(Screen.formKasTransaksiScreen)
                         })
                         
                     )
