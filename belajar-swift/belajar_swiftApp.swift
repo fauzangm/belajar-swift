@@ -19,7 +19,7 @@ struct belajar_swiftApp: App {
             RouteView()
                 .background(.black)
         }
-        .modelContainer(for: [MyList.self, Movie.self,ActorsMovie.self,Review.self])
+        .modelContainer(for: [MyList.self, Movie.self,ActorsMovie.self,Review.self,Furniture.self])
     }
     
     private func handleModelChange() {

@@ -10,6 +10,7 @@ import SwiftUI
 struct KasTransaksiView: View {
     @Environment(\.dismiss) private var dismiss
     // Contoh data
+    @State private var showAddKeuangan = false
     @State private var data = [
         KasTransaksiModel(tanggal: "27 Desember 2028", detail: [
             DetailKasTransaksi(tanggal: "27 Desember 2028", jenisTransaksi: "Lainnya", desc: "Persiapan BBQ RT Tahun Baru 2029", uang: "- Rp 349.000")
@@ -66,16 +67,32 @@ extension KasTransaksiView {
                 .font(.title2)
                 .foregroundColor(.black)
             Spacer()
-            ZStack {
-                Circle()
-                    .fill(Color.white) // Latar belakang lingkaran putih
-                    .frame(width: 32, height: 32) // Ukuran lingkaran
-                Image(systemName: "plus")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.black)
-                    .frame(width: 15, height: 15) // Ukuran ikon
+            Button(action: {showAddKeuangan = true}){
+                ZStack {
+                    Circle()
+                        .fill(Color.white) // Latar belakang lingkaran putih
+                        .frame(width: 32, height: 32) // Ukuran lingkaran
+                    Image(systemName: "plus")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.black)
+                        .frame(width: 15, height: 15) // Ukuran ikon
+                }
+                .alert(isPresented : $showAddKeuangan){
+                    Alert(
+                        title: Text("Silahkan Pilih Jenis Transaksi"),
+                        message: Text("Pilih transaksi: Keluar untuk pengurangan saldo, atau Masuk untuk penambahan saldo."),
+                        primaryButton: .cancel(Text("Masuk"),action: {
+                            
+                        }),
+                        secondaryButton: .destructive(Text("Keluar"),action: {
+                            
+                        })
+                        
+                    )
+                }
             }
+          
         }
         Spacer()
             .frame(height: 32)

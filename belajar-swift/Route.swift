@@ -17,6 +17,7 @@ enum Screen: Hashable {
     case newsAppViewScreen
     case listingFilterScreen
     case kasTransaksiScreen
+    case FurnitureScreen
 }
 
 struct RouteView: View {
@@ -41,6 +42,8 @@ struct RouteView: View {
                         ListingFilterView()
                     case .kasTransaksiScreen:
                         KasTransaksiView()
+                    case .FurnitureScreen:
+                        FurnitureView()
                     }
                 }
         }

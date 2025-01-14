@@ -118,6 +118,12 @@ struct MyListScreen: View {
                 }
             
             
+            Text("Go To Furniture")
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .trailing)
+                .onTapGesture {
+                    navigationPath.append(Screen.FurnitureScreen)
+                }
+            
         }
         .listStyle(.insetGrouped)
         .sheet(item: $activeSheet) { sheet in
