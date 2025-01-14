@@ -29,11 +29,39 @@ struct KasTransaksiView: View {
     var body: some View {
         VStack{
             HeaderContent()
-            Spacer()
             ListingContent()
-            
         }
-        .navigationBarBackButtonHidden()
+        .navigationTitle("Kelola Keuangan")
+        .toolbar{
+            ToolbarItem(placement:.topBarTrailing){
+                Button(action: {showAddKeuangan = true}){
+                    ZStack {
+                        Circle()
+                            .fill(Color.white) // Latar belakang lingkaran putih
+                            .frame(width: 32, height: 32) // Ukuran lingkaran
+                        Image(systemName: "plus")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.black)
+                            .frame(width: 15, height: 15) // Ukuran ikon
+                    }
+                    .alert(isPresented : $showAddKeuangan){
+                        Alert(
+                            title: Text("Silahkan Pilih Jenis Transaksi"),
+                            message: Text("Pilih transaksi: Keluar untuk pengurangan saldo, atau Masuk untuk penambahan saldo."),
+                            primaryButton: .cancel(Text("Masuk"),action: {
+                                navigationPath.append(Screen.formKasTransaksiScreen)
+                            }),
+                            secondaryButton: .destructive(Text("Keluar"),action: {
+                                
+                                navigationPath.append(Screen.formKasTransaksiScreen)
+                            })
+                            
+                        )
+                    }
+                }
+            }
+        }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("ColorBackground"))
@@ -49,56 +77,56 @@ struct KasTransaksiView: View {
 extension KasTransaksiView {
     @ViewBuilder
     func HeaderContent() -> some View {
-        HStack {
-            ZStack {
-                Circle()
-                    .fill(Color.white) // Latar belakang lingkaran putih
-                    .frame(width: 32, height: 32) // Ukuran lingkaran
-                Image(systemName: "minus")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.black)
-                    .frame(width: 15, height: 15) // Ukuran ikon
-            }
-            .onTapGesture {
-                dismiss()
-            }
-            
-            Spacer()
-            Text("Kelola Keuangan")
-                .font(.title2)
-                .foregroundColor(.black)
-            Spacer()
-            Button(action: {showAddKeuangan = true}){
-                ZStack {
-                    Circle()
-                        .fill(Color.white) // Latar belakang lingkaran putih
-                        .frame(width: 32, height: 32) // Ukuran lingkaran
-                    Image(systemName: "plus")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.black)
-                        .frame(width: 15, height: 15) // Ukuran ikon
-                }
-                .alert(isPresented : $showAddKeuangan){
-                    Alert(
-                        title: Text("Silahkan Pilih Jenis Transaksi"),
-                        message: Text("Pilih transaksi: Keluar untuk pengurangan saldo, atau Masuk untuk penambahan saldo."),
-                        primaryButton: .cancel(Text("Masuk"),action: {
-                            navigationPath.append(Screen.formKasTransaksiScreen)
-                        }),
-                        secondaryButton: .destructive(Text("Keluar"),action: {
-                            
-                            navigationPath.append(Screen.formKasTransaksiScreen)
-                        })
-                        
-                    )
-                }
-            }
-          
-        }
-        Spacer()
-            .frame(height: 32)
+//        HStack {
+//            ZStack {
+//                Circle()
+//                    .fill(Color.white) // Latar belakang lingkaran putih
+//                    .frame(width: 32, height: 32) // Ukuran lingkaran
+//                Image(systemName: "minus")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .foregroundColor(.black)
+//                    .frame(width: 15, height: 15) // Ukuran ikon
+//            }
+//            .onTapGesture {
+//                dismiss()
+//            }
+//            
+//            Spacer()
+//            Text("Kelola Keuangan")
+//                .font(.title2)
+//                .foregroundColor(.black)
+//            Spacer()
+//            Button(action: {showAddKeuangan = true}){
+//                ZStack {
+//                    Circle()
+//                        .fill(Color.white) // Latar belakang lingkaran putih
+//                        .frame(width: 32, height: 32) // Ukuran lingkaran
+//                    Image(systemName: "plus")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .foregroundColor(.black)
+//                        .frame(width: 15, height: 15) // Ukuran ikon
+//                }
+//                .alert(isPresented : $showAddKeuangan){
+//                    Alert(
+//                        title: Text("Silahkan Pilih Jenis Transaksi"),
+//                        message: Text("Pilih transaksi: Keluar untuk pengurangan saldo, atau Masuk untuk penambahan saldo."),
+//                        primaryButton: .cancel(Text("Masuk"),action: {
+//                            navigationPath.append(Screen.formKasTransaksiScreen)
+//                        }),
+//                        secondaryButton: .destructive(Text("Keluar"),action: {
+//                            
+//                            navigationPath.append(Screen.formKasTransaksiScreen)
+//                        })
+//                        
+//                    )
+//                }
+//            }
+//          
+//        }
+//        Spacer()
+//            .frame(height: 32)
         ZStack{
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color("ColorLightGreen"))
@@ -192,6 +220,9 @@ extension KasTransaksiView {
                                         .font(.caption)
                                         .foregroundColor(.gray)
                                 }
+                                .onTapGesture(perform: {
+                                    navigationPath.append(Screen.detailKasTransaksiScreen)
+                                })
                                 .padding()
                                 .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
                                 .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
