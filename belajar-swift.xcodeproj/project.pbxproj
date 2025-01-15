@@ -48,6 +48,10 @@
 		6BDD20262D36145100E2CD24 /* FurnitureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD20252D36145100E2CD24 /* FurnitureView.swift */; };
 		6BDD20282D3614E200E2CD24 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD20272D3614E200E2CD24 /* ImagePicker.swift */; };
 		6BDD217E2D364C1400E2CD24 /* DetailKasTransaksiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD217D2D364C1400E2CD24 /* DetailKasTransaksiView.swift */; };
+		6BDD21822D375FCF00E2CD24 /* SampelPublisherSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD21812D375FCF00E2CD24 /* SampelPublisherSearchView.swift */; };
+		6BDD21842D37681600E2CD24 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD21832D37681600E2CD24 /* SearchViewModel.swift */; };
+		6BDD21862D37950A00E2CD24 /* KasTransaksiVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD21852D37950A00E2CD24 /* KasTransaksiVM.swift */; };
+		6BDD218A2D37991600E2CD24 /* ExtKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD21892D37991600E2CD24 /* ExtKeyboard.swift */; };
 		6BE6434D2D0ABB6600EFB5B4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6434C2D0ABB6600EFB5B4 /* Movie.swift */; };
 		6BE6434F2D0AC54900EFB5B4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6434E2D0AC54900EFB5B4 /* String+Extensions.swift */; };
 		6BE643512D0AD15800EFB5B4 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE643502D0AD15800EFB5B4 /* MovieListView.swift */; };
@@ -126,6 +130,11 @@
 		6BDD20252D36145100E2CD24 /* FurnitureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureView.swift; sourceTree = "<group>"; };
 		6BDD20272D3614E200E2CD24 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6BDD217D2D364C1400E2CD24 /* DetailKasTransaksiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailKasTransaksiView.swift; sourceTree = "<group>"; };
+		6BDD21802D375D7500E2CD24 /* Publisher.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Publisher.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6BDD21812D375FCF00E2CD24 /* SampelPublisherSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampelPublisherSearchView.swift; sourceTree = "<group>"; };
+		6BDD21832D37681600E2CD24 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		6BDD21852D37950A00E2CD24 /* KasTransaksiVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasTransaksiVM.swift; sourceTree = "<group>"; };
+		6BDD21892D37991600E2CD24 /* ExtKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtKeyboard.swift; sourceTree = "<group>"; };
 		6BE6434C2D0ABB6600EFB5B4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		6BE6434E2D0AC54900EFB5B4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		6BE643502D0AD15800EFB5B4 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
@@ -304,6 +313,7 @@
 				6BE6434E2D0AC54900EFB5B4 /* String+Extensions.swift */,
 				6B2832542D115C0A00B04BDE /* enum.swift */,
 				6BDD20272D3614E200E2CD24 /* ImagePicker.swift */,
+				6BDD21892D37991600E2CD24 /* ExtKeyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -359,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				6BC533B12D27CFE400AAD10F /* Data */,
+				6BDD21852D37950A00E2CD24 /* KasTransaksiVM.swift */,
 				6BC533AF2D27B9D000AAD10F /* KasTransaksiView.swift */,
 				6BB11CFC2D2FC44B00F167A3 /* FormKasTransaksiView.swift */,
 				6BDD217D2D364C1400E2CD24 /* DetailKasTransaksiView.swift */,
@@ -471,9 +482,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6BDD217F2D375D5A00E2CD24 /* Publisher */ = {
+			isa = PBXGroup;
+			children = (
+				6BDD21802D375D7500E2CD24 /* Publisher.playground */,
+				6BDD21812D375FCF00E2CD24 /* SampelPublisherSearchView.swift */,
+				6BDD21832D37681600E2CD24 /* SearchViewModel.swift */,
+			);
+			path = Publisher;
+			sourceTree = "<group>";
+		};
 		6BF8BF582D22801F0043952C /* Publisher */ = {
 			isa = PBXGroup;
 			children = (
+				6BDD217F2D375D5A00E2CD24 /* Publisher */,
 				6B727E3D2D266C7300E226E2 /* FilterAndPaging */,
 				6B727E382D2647D400E226E2 /* Data */,
 				6B727E302D26248900E226E2 /* Operator */,
@@ -632,6 +654,7 @@
 				6BC533B02D27B9D000AAD10F /* KasTransaksiView.swift in Sources */,
 				6BFFF3EF2D101CE200084FBB /* Actor.swift in Sources */,
 				6B2832452D110CFD00B04BDE /* ListingMovie.swift in Sources */,
+				6BDD21842D37681600E2CD24 /* SearchViewModel.swift in Sources */,
 				6B727E372D263FA100E226E2 /* NewsVm.swift in Sources */,
 				6BF8BF572D21515B0043952C /* Genre.swift in Sources */,
 				6BDD217E2D364C1400E2CD24 /* DetailKasTransaksiView.swift in Sources */,
@@ -645,7 +668,9 @@
 				6BFFF3E92D10059500084FBB /* Review.swift in Sources */,
 				2293A0072CAE4E7600E8FD1B /* ReminderVm.swift in Sources */,
 				6B727E412D266CC000E226E2 /* MovieFilter.swift in Sources */,
+				6BDD21822D375FCF00E2CD24 /* SampelPublisherSearchView.swift in Sources */,
 				22151C2B2CABB47200A6AFA5 /* AddMyListScreen.swift in Sources */,
+				6BDD218A2D37991600E2CD24 /* ExtKeyboard.swift in Sources */,
 				6B2832492D110D9100B04BDE /* ActorSelectionView.swift in Sources */,
 				6BB11CFD2D2FC44B00F167A3 /* FormKasTransaksiView.swift in Sources */,
 				6B727E432D266D3F00E226E2 /* FilterVm.swift in Sources */,
@@ -656,6 +681,7 @@
 				6B2832532D115BD800B04BDE /* FilterMovie.swift in Sources */,
 				6BF8BF5A2D2280420043952C /* PublisherView.swift in Sources */,
 				6BFFF3ED2D100E8500084FBB /* ListingReviewMovie.swift in Sources */,
+				6BDD21862D37950A00E2CD24 /* KasTransaksiVM.swift in Sources */,
 				6BE6434D2D0ABB6600EFB5B4 /* Movie.swift in Sources */,
 				22151C312CABD29000A6AFA5 /* MyList.swift in Sources */,
 				6B2832512D11278400B04BDE /* MovieVM.swift in Sources */,
