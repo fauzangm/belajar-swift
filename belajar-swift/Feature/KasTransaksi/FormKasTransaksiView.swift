@@ -87,9 +87,6 @@ struct FormKasTransaksiView: View {
                 )
             }
         }
-        .onTapGesture {
-            hideKeyboard()
-        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Simpan") {
