@@ -11,80 +11,86 @@ struct FormKasTransaksiView: View {
     @StateObject private var viewModel = KasTransaksiVM()
     let sampelKategori = ["Operasional", "Kegiatan", "Perbaikan", "Lainnya"]
     let sampelMetodePembayaran = ["Tunai", "Non Tunai"]
-
+    
     var body: some View {
         VStack {
             Form {
-                TextField("Nominal Transaksi", text: $viewModel.inputTransaksi)
-                    .keyboardType(.decimalPad)
-
-                HStack {
-                    Text("Tanggal Transaksi")
-                    Spacer()
-                    DatePicker("", selection: $viewModel.tgl, displayedComponents: [.date])
-                        .datePickerStyle(.compact)
-                        .labelsHidden()
-                }
-
-                HStack {
-                    Text("Kategori Pengeluaran")
-                    Spacer()
-                    Picker("", selection: $viewModel.selectedKategori) {
-                        ForEach(sampelKategori, id: \.self) { item in
-                            Text(item)
+                Group{
+                    TextField("Nominal Transaksi", text: $viewModel.inputTransaksi)
+                        .keyboardType(.decimalPad)
+                    
+                    HStack {
+                        Text("Tanggal Transaksi")
+                        Spacer()
+                        DatePicker("", selection: $viewModel.tgl, displayedComponents: [.date])
+                            .datePickerStyle(.compact)
+                            .labelsHidden()
+                    }
+                    
+                    HStack {
+                        Text("Kategori Pengeluaran")
+                        Spacer()
+                        Picker("Kategori Pengeluaran", selection: $viewModel.selectedKategori) {
+                            ForEach(sampelKategori, id: \.self) { item in
+                                Text(item)
+                            }
                         }
+                        .onAppear{
+                            viewModel.selectedKategori = sampelKategori.first ?? ""
+                        }
+                        .labelsHidden()
+                        .pickerStyle(.automatic)
                     }
-                    .onAppear{
-                        viewModel.selectedKategori = sampelKategori.first ?? ""
+                    
+                    HStack {
+                        Text("Metode Pembayaran")
+                        Spacer()
+                        Picker("", selection: $viewModel.selectedMetodePembayaran) {
+                            ForEach(sampelMetodePembayaran, id: \.self) { item in
+                                Text(item)
+                            }
+                        }
+                        
+                        .onAppear{
+                            viewModel.selectedMetodePembayaran = sampelMetodePembayaran.first ?? ""
+                        }
+                        .labelsHidden()
+                        .pickerStyle(.automatic)
                     }
-                    .labelsHidden()
-                    .pickerStyle(.automatic)
                 }
-
-                HStack {
-                    Text("Metode Pembayaran")
-                    Spacer()
-                    Picker("", selection: $viewModel.selectedMetodePembayaran) {
-                        ForEach(sampelMetodePembayaran, id: \.self) { item in
-                            Text(item)
+                
+                Group{
+                    TextField("Keterangan", text: $viewModel.inputKeterangan)
+                    
+                    Button(action: {}) {
+                        HStack {
+                            Text("Lampiran")
+                            Spacer()
+                            Image(systemName: "paperclip")
                         }
                     }
                     
-                    .onAppear{
-                        viewModel.selectedMetodePembayaran = sampelMetodePembayaran.first ?? ""
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(.red)
+                            .font(.footnote)
                     }
-                    .labelsHidden()
-                    .pickerStyle(.automatic)
-                }
-
-                TextField("Keterangan", text: $viewModel.inputKeterangan)
-
-                Button(action: {}) {
-                    HStack {
-                        Text("Lampiran")
-                        Spacer()
-                        Image(systemName: "paperclip")
+                    
+                    HStack(alignment: .top) {
+                        Image(systemName: "info.circle")
+                            .foregroundColor(Color(.systemBlue))
+                        Text("Lampiran dapat berupa file berformat JPG, JPEG, PNG, atau PDF dengan ukuran maksimal 1,5MB")
+                            .foregroundColor(Color(.systemBlue))
                     }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(.systemGray6))
+                    )
                 }
-
-                if !viewModel.errorMessage.isEmpty {
-                    Text(viewModel.errorMessage)
-                        .foregroundColor(.red)
-                        .font(.footnote)
-                }
-
-                HStack(alignment: .top) {
-                    Image(systemName: "info.circle")
-                        .foregroundColor(Color(.systemBlue))
-                    Text("Lampiran dapat berupa file berformat JPG, JPEG, PNG, atau PDF dengan ukuran maksimal 1,5MB")
-                        .foregroundColor(Color(.systemBlue))
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color(.systemGray6))
-                )
+                
+                
             }
         }
         .toolbar {
@@ -104,7 +110,3 @@ struct FormKasTransaksiView: View {
     FormKasTransaksiView()
 }
 
-
-#Preview {
-    FormKasTransaksiView()
-}
