@@ -20,6 +20,7 @@ enum Screen: Hashable {
     case furnitureScreen
     case formKasTransaksiScreen
     case detailKasTransaksiScreen
+    case unduhLaporanScreen
 }
 
 struct RouteView: View {
@@ -50,6 +51,8 @@ struct RouteView: View {
                         FormKasTransaksiView()
                     case .detailKasTransaksiScreen:
                         DetailKasTransaksiView()
+                    case .unduhLaporanScreen:
+                        UnduhLaporanView()
                     }
                 }
         }

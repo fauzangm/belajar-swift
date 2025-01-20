@@ -34,6 +34,7 @@
 		6B2832512D11278400B04BDE /* MovieVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2832502D11278400B04BDE /* MovieVM.swift */; };
 		6B2832532D115BD800B04BDE /* FilterMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2832522D115BD800B04BDE /* FilterMovie.swift */; };
 		6B2832552D115C0A00B04BDE /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2832542D115C0A00B04BDE /* enum.swift */; };
+		6B2EA4A22D3DDE48001E170D /* UnduhLaporanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2EA4A12D3DDE48001E170D /* UnduhLaporanView.swift */; };
 		6B727E352D263D3000E226E2 /* NewsAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B727E342D263D3000E226E2 /* NewsAppView.swift */; };
 		6B727E372D263FA100E226E2 /* NewsVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B727E362D263FA100E226E2 /* NewsVm.swift */; };
 		6B727E3C2D2647F600E226E2 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B727E3B2D2647F600E226E2 /* Todo.swift */; };
@@ -110,6 +111,7 @@
 		6B2832502D11278400B04BDE /* MovieVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVM.swift; sourceTree = "<group>"; };
 		6B2832522D115BD800B04BDE /* FilterMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMovie.swift; sourceTree = "<group>"; };
 		6B2832542D115C0A00B04BDE /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
+		6B2EA4A12D3DDE48001E170D /* UnduhLaporanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnduhLaporanView.swift; sourceTree = "<group>"; };
 		6B727E2A2D261D2300E226E2 /* subscribing-to-publishers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "subscribing-to-publishers.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6B727E2E2D261EA600E226E2 /* ErrorHandlingPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ErrorHandlingPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6B727E2F2D26202D00E226E2 /* Transofrmation-map-flat-merge.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Transofrmation-map-flat-merge.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -453,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				6BC533B22D27CFEB00AAD10F /* Model */,
+				6B2EA4A12D3DDE48001E170D /* UnduhLaporanView.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				22151C312CABD29000A6AFA5 /* MyList.swift in Sources */,
 				6B2832512D11278400B04BDE /* MovieVM.swift in Sources */,
 				6B2832472D110D2700B04BDE /* ListingActor.swift in Sources */,
+				6B2EA4A22D3DDE48001E170D /* UnduhLaporanView.swift in Sources */,
 				6B727E3F2D266CA500E226E2 /* ListingFilterView.swift in Sources */,
 				6B28324D2D11191000B04BDE /* ActorDetailView.swift in Sources */,
 			);
