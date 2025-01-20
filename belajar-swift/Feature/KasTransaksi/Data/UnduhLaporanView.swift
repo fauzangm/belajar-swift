@@ -11,7 +11,7 @@ struct UnduhLaporanView: View {
     @StateObject private var viewModel = KasTransaksiVM()
     let sampelKategori = ["Operasional", "Kegiatan", "Perbaikan", "Lainnya"]
     @State private var selectedMonth: String = ""
-    @State private var selectedYear: String = ""
+    @State private var selectedYear: Int = 0
     
     // Daftar bulan dari Januari hingga Desember
     private let months = [
@@ -47,12 +47,12 @@ struct UnduhLaporanView: View {
                     Spacer()
                     Picker("", selection: $selectedYear) {
                         ForEach((2000...Calendar.current.component(.year, from: Date())).reversed(), id: \.self) { year in
-                            Text("\(year)").tag(year)
+                            Text(String(format: "%d", year)).tag(year)
                         }
                     }
                     .onAppear {
                         // Atur default tahun saat ini
-                        selectedYear = "\(Calendar.current.component(.year, from: Date()))"
+                        selectedYear = (Calendar.current.component(.year, from: Date()))
                     }
                     .labelsHidden()
                     .pickerStyle(.automatic)
